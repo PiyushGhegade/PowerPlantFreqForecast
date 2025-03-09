@@ -1,55 +1,65 @@
-# PowerPlantFreqForecast
-Power Plant Frequency Forecast is a machine learning-based project that predicts power grid frequency variations using advanced deep learning techniques.
+# **Power Plant Frequency Forecast**
 
-# ARIMA-LSTM Hybrid Model
+Power Plant Frequency Forecast is a machine learning-based project designed to predict power grid frequency variations using advanced deep learning techniques.
 
-## Overview
+---
 
-This project implements an ARIMA-LSTM hybrid model for time series forecasting. The combination of ARIMA (AutoRegressive Integrated Moving Average) and LSTM (Long Short-Term Memory) leverages the strengths of both statistical and deep learning approaches to improve predictive accuracy.
+## **ARIMA-LSTM Hybrid Model**
 
-# Maha Data Processing
+### **Overview**
 
-## Data Extraction
-### Source Files
-- The raw data originates from frequency profile reports in PDF format.
-- The script `pdf_to_csv_with_proper_heading.py` is used to extract and structure the data.
+This project implements an ARIMA-LSTM hybrid model for time series forecasting. By combining **ARIMA** (AutoRegressive Integrated Moving Average) and **LSTM** (Long Short-Term Memory), the model leverages the strengths of both statistical and deep learning approaches, resulting in improved predictive accuracy.
 
-### Extraction Process
+---
+
+## **Maha Data Processing**
+
+### **Data Extraction**
+
+#### **Source Files**
+- The raw data originates from frequency profile reports in **PDF format**.
+- The script **`pdf_to_csv_with_proper_heading.py`** is used to extract and structure the data efficiently.
+
+#### **Extraction Process**
 1. **Extract Text**: The script utilizes `pdfplumber` to read text from PDF files.
 2. **Parse Data**:
    - Identifies column headers (days) and rows (time blocks with frequency values).
-   - Converts extracted data into a structured tabular format.
+   - Converts the extracted data into a structured tabular format.
 3. **Save as CSV**:
    - The processed data is saved as a CSV file.
-   - The file is transposed to organize the data properly.
+   - The file is transposed to ensure proper data organization.
 
-## Data Transformation and Merging
-### Monthly CSV Processing
-- The script `transposedata.py` processes each monthly CSV from the `transformed_data2024/` folder.
-- The data is reformatted to include proper date representation in `DD-MM-YYYY` format.
+### **Data Transformation and Merging**
 
-### Merging Process
+#### **Monthly CSV Processing**
+- The script **`transposedata.py`** processes each monthly CSV file stored in the **`transformed_data2024/`** folder.
+- The data is reformatted to include proper date representation in **DD-MM-YYYY** format.
+
+#### **Merging Process**
 - All monthly CSV files are merged into a single dataset.
-- The final merged file is saved as `maha_data.csv`.
+- The final merged dataset is saved as **`maha_data.csv`**.
 
-## Final Output
-The `maha_data.csv` file is the final structured dataset containing frequency profile data for all processed months in 2024.
+### **Final Output**
+The **`maha_data.csv`** file is the structured dataset containing frequency profile data for all processed months in 2024.
 
-## Dependencies
+---
+
+## **Dependencies**
+
 To run the scripts, ensure the following dependencies are installed:
 ```bash
 pip install pandas pdfplumber
 ```
 
-## Prerequisites
-
-Ensure you have the following dependencies installed before running the notebook:
-
+### **Prerequisites**
+Before running the notebook, install the required dependencies:
 ```bash
 pip install numpy pandas matplotlib scikit-learn statsmodels tensorflow keras
 ```
 
-## How to Run
+---
+
+## **How to Run**
 
 1. Clone the repository or download the notebook.
 2. Install the required dependencies.
@@ -57,22 +67,36 @@ pip install numpy pandas matplotlib scikit-learn statsmodels tensorflow keras
    ```bash
    jupyter notebook arima_lstm.ipynb
    ```
-4. Execute the cells in sequence to preprocess data, train the model, and visualize the results.
+4. Execute the cells in sequence to preprocess the data, train the model, and visualize the results.
 
-## Model Details
+---
+
+## **Model Details**
 
 - **ARIMA Model**: Captures linear trends and seasonality in the data.
 - **LSTM Model**: Learns complex nonlinear dependencies in time series data.
-- **Hybrid Approach**: ARIMA is used to model the linear component, while LSTM captures residual nonlinear patterns.
+- **Hybrid Approach**: ARIMA models the linear component, while LSTM captures residual nonlinear patterns.
 
-## Results
+---
 
-The final model's performance is evaluated using common error metrics such as RMSE (Root Mean Squared Error) and MAE (Mean Absolute Error). Graphical analysis helps in assessing the forecast accuracy.
+## **Results**
 
-## Future Improvements
+The final model's performance is evaluated using common error metrics such as:
+- **RMSE** (Root Mean Squared Error)
+- **MAE** (Mean Absolute Error)
 
-- Hyperparameter tuning for better performance.
-- Forecating of a month
-- Testing on larger and more complex datasets.
-- Experimenting with other hybrid models Like LSTM+CNN.
+Graphical analysis is also used to assess forecast accuracy.
+
+---
+
+## **Future Improvements**
+
+- **Hyperparameter tuning** for better performance.
+- **Forecasting for an entire month** to improve long-term accuracy.
+- **Testing on larger and more complex datasets**.
+- **Experimenting with other hybrid models**, such as **LSTM + CNN**.
+
+---
+
+This project aims to enhance power grid stability by providing precise frequency variation forecasts, ultimately contributing to a more efficient energy management system.
 
