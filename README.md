@@ -42,6 +42,7 @@ The final model's performance is evaluated using common error metrics such as RM
 ## Future Improvements
 
 - Hyperparameter tuning for better performance.
+- Forecating
 - Testing on larger and more complex datasets.
 - Experimenting with other hybrid models Like LSTM+CNN.
 
