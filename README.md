@@ -18,7 +18,7 @@ This project implements an ARIMA-LSTM hybrid model for time series forecasting. 
 
 #### **Source Files**
 - The raw data originates from frequency profile reports in **PDF format**.
-- The script **`pdf_to_csv_with_proper_heading.py`** is used to extract and structure the data efficiently.
+- The script **`PDFtoCSV.py`** is used to extract and structure the data efficiently.
 
 #### **Extraction Process**
 1. **Extract Text**: The script utilizes `pdfplumber` to read text from PDF files.
@@ -32,15 +32,15 @@ This project implements an ARIMA-LSTM hybrid model for time series forecasting. 
 ### **Data Transformation and Merging**
 
 #### **Monthly CSV Processing**
-- The script **`transposedata.py`** processes each monthly CSV file stored in the **`transformed_data2024/`** folder.
+- The script **`transform.py`** processes each monthly CSV file stored in the **`transformed_data2024/`** folder.
 - The data is reformatted to include proper date representation in **DD-MM-YYYY** format.
 
 #### **Merging Process**
 - All monthly CSV files are merged into a single dataset.
-- The final merged dataset is saved as **`maha_data.csv`**.
+- The final merged dataset is saved as **`maha_final_data.csv`**.
 
 ### **Final Output**
-The **`maha_data.csv`** file is the structured dataset containing frequency profile data for all processed months in 2024.
+The **`maha_final_data.csv`** file is the structured dataset containing frequency profile data for all processed months in 2024.
 
 ---
 
